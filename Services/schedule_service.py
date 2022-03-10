@@ -1,5 +1,5 @@
 import os
-from mappings_generator import Mappings_generator
+from Services.mappings_generator import Mappings_generator
 from Controllers.helio_controller import Helio_controller
 from Controllers.triplestore_controller import Triplestore_controller
 
