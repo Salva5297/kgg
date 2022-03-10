@@ -24,5 +24,5 @@ class Schedule_service:
         helio_controller.execute_helio()
 
         # Send graph to triple store
-        triplestore_controller = Triple_Store_Controller(self.output_path, self.graph_namespace)
-        triplestore_controller.send_graph()
+        #triplestore_controller = Triple_Store_Controller(self.output_path, #self.graph_namespace)
+        #triplestore_controller.send_graph()
