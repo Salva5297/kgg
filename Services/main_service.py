@@ -21,7 +21,7 @@ class Service:
         # self.type = self.request.args.get('type')
         if self.uploaded_file.filename != '':
             self.graph_namespace = self.uploaded_file.filename.split('.')[0] # Get the filename without the extension to create the graph namespace
-            file_data = self.uploaded_file.read()
+            file_data = self.uploaded_file.read().decode('utf-8')
             print(type(file_data))
             tmp_service = Tmp_service(file_data)
             tmp_service.create_tmp_file() # create temporal file
