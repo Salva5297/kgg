@@ -1,0 +1,175 @@
+prefixes:
+  process: https://cogito.iot.linkeddata.es/def/process#
+  resource: https://cogito.iot.linkeddata.es/def/resource#
+  const: https://cogito.iot.linkeddata.es/def/construction#
+  time: http://www.w3.org/2006/time#
+  geo: http://www.w3.org/2003/01/geo/wgs84_pos#
+  s4city: https://saref.etsi.org/saref4city#
+  saref: https://saref.etsi.org/core#
+  xsd: http://www.w3.org/2001/XMLSchema#
+  data: https://data.cogito.iot.linkeddata.es/resources/
+
+mappings:
+  project:
+    sources:
+      - ['example.xml~xpath', 'Project']
+    s: data:project/$(GUID)
+    po:
+      - [a, const:Project]
+      - [const:projectID, $(GUID)]
+      - [const:hasName, $(Name), xsd:string]
+      - [process:hasCreationDate, $(CreationDate), xsd:dateTime]
+      - [process:hasCost, data:cost/$(GUID)]
+      - [process:isPlannedIn, data:interval/$(GUID)]
+
+  
+  cost:
+    sources:
+      - ['example.xml~xpath', 'Project']
+    s: data:cost/$(GUID)
+    po:
+      - [a, process:Cost]
+      - [process:amount, $(CurrencyDigits), xsd:float]
+      - [process:isMeasuredIn, data:unitOfCurrency/$(GUID)]
+
+  cost_task:
+    sources:
+      - ['example.xml~xpath', 'Project/Tasks/Task[*]']
+    s: data:cost/$(GUID)
+    po:
+      - [a, process:Cost]
+      - [process:amount, $(Cost), xsd:float]
+
+  cost_assignment:
+    sources:
+      - ['example.xml~xpath', 'Project/Assignments/Assignment[*]']
+    s: data:cost/$(GUID)
+    po:
+      - [a, process:Cost]
+      - [process:amount, $(Cost), xsd:float]
+
+  unitOfCurrency:
+    sources:
+      - ['example.xml~xpath', 'Project']
+    s: data:unitOfCurrency/$(GUID)
+    po:
+      - [a, process:UnitOfCurrency]
+      - [process:currencyCode, $(CurrencyCode)]
+      - [process:currencySymbol, $(CurrencySymbol)]
+
+  
+  task:
+    sources:
+      - ['example.xml~xpath', 'Project/Tasks/Task[*]']
+    s: data:task/$(GUID)
+    po:
+      - [a, process:Task]
+      - [process:taskId, $(GUID)]
+      - [process:taskUid, $(UID)]
+      - [process:hasName, $(Name), xsd:string]
+      - [process:hasCreationDate, $(CreateDate), xsd:dateTime]
+      - [process:isPlannedIn, data:interval/$(GUID)]
+      - [process:hasPriority, $(Priority), xsd:integer]
+      - [process:hasProgress, $(RemainingWork), xsd:string]
+      - [process:hasStatus, $(ActualWork), xsd:string]
+      - [process:hasCost, data:cost/$(GUID)]
+
+  resource:
+    sources:
+      - ['example.xml~xpath', 'Project/Resources/Resource[*]']
+    s: data:resource/$(GUID)
+    po:
+      - [a, resource:Resource]
+      - [resource:resourceId, $(GUID)]
+      - [resource:resourceUid, $(UID)]
+      - [resource:hasCreationDate, $(CreationDate), xsd:dateTime]
+      - [resource:hasResourceType, data:resourceType/$(Type)]
+
+  assignment:
+    sources:
+      - ['example.xml~xpath', 'Project/Assignments/Assignment[*]']
+    s: data:assignment/$(GUID)
+    po:
+      - [a, resource:Assignment]
+      - [resource:assignmentId, $(GUID)]
+      - [resource:hasCreationDate, $(CreationDate), xsd:dateTime]
+      - [process:isPlannedIn, data:interval/$(GUID)]
+      - [resource:assignedTask, $(TaskUID)]
+      - [resource:assignedResource, $(ResourceUID)]
+      - [process:hasCost, data:cost/$(GUID)]
+
+  interval_project:
+    sources:
+      - ['example.xml~xpath', 'Project']
+    s: data:interval/$(GUID)
+    po:
+      - [a, time:Interval]
+      - [time:hasBeginning, data:startInstant/$(GUID)]
+      - [process:hasEnd, data:endInstant/$(GUID)]
+
+  instant_start_project:
+    sources:
+      - ['example.xml~xpath', 'Project']
+    s: data:startInstant/$(GUID)
+    po:
+      - [a, time:Instant]
+      - [time:inXSDDateTimeStamp, $(StartDate), xsd:dateTime]
+
+  instant_end_project:
+    sources:
+      - ['example.xml~xpath', 'Project']
+    s: data:endInstant/$(GUID)
+    po:
+      - [a, time:Instant]
+      - [process:inXSDDateTimeStamp, $(FinishDate), xsd:dateTime]
+
+
+  interval_task:
+    sources:
+      - ['example.xml~xpath', 'Project/Tasks/Task[*]']
+    s: data:interval/$(GUID)
+    po:
+      - [a, time:Interval]
+      - [time:hasBeginning, data:startInstant/$(GUID)]
+      - [process:hasEnd, data:endInstant/$(GUID)]
+
+  instant_start_task:
+    sources:
+      - ['example.xml~xpath', 'Project/Tasks/Task[*]']
+    s: data:startInstant/$(GUID)
+    po:
+      - [a, time:Instant]
+      - [time:inXSDDateTimeStamp, $(Start), xsd:dateTime]
+
+  instant_end_task:
+    sources:
+      - ['example.xml~xpath', 'Project/Tasks/Task[*]']
+    s: data:endInstant/$(GUID)
+    po:
+      - [a, time:Instant]
+      - [process:inXSDDateTimeStamp, $(Finish), xsd:dateTime]
+
+  interval_assignment:
+    sources:
+      - ['example.xml~xpath', 'Project/Assignments/Assignment[*]']
+    s: data:interval/$(GUID)
+    po:
+      - [a, time:Interval]
+      - [time:hasBeginning, data:startInstant/$(GUID)]
+      - [process:hasEnd, data:endInstant/$(GUID)]
+
+  instant_start_assignment:
+    sources:
+      - ['example.xml~xpath', 'Project/Assignments/Assignment[*]']
+    s: data:startInstant/$(GUID)
+    po:
+      - [a, time:Instant]
+      - [time:inXSDDateTimeStamp, $(Start), xsd:dateTime]
+
+  instant_end_assignment:
+    sources:
+      - ['example.xml~xpath', 'Project/Assignments/Assignment[*]']
+    s: data:endInstant/$(GUID)
+    po:
+      - [a, time:Instant]
+      - [process:inXSDDateTimeStamp, $(Finish), xsd:dateTime]
