@@ -25,4 +25,4 @@ class Schedule_service:
 
         # Send graph to triple store
         triplestore_controller = Triple_Store_Controller(self.output_path, self.graph_namespace)
-        triplestore_controller.send_graph_to_triplestore()
+        triplestore_controller.send_graph()
