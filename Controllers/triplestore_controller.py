@@ -7,7 +7,7 @@ class Triple_Store_Controller:
         self.output_path = output_path
         self.graph_namespace = graph_namespace
         self.triple_store_url = "http://localhost:8890/"
-        self.graph_url = "https://data.cogito.iot.linkeddata.es/"
+        self.graph_url = "https://data.cogito.iot.linkeddata.es/schedule/"
 
 
     def send_graph(self):
