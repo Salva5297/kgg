@@ -2,7 +2,7 @@
 
 class Mappings_generator:
     def __init__(self, file_path, mappings_path):
-        self.file_path = file_path
+        self.file_path = '"' + file_path + '"'
         self.mappings_path = mappings_path
 
 
@@ -855,86 +855,86 @@ map:s_016 rdf:type rr:SubjectMap ;
 
 map:source_000 rml:iterator "Project" ;
     rml:referenceFormulation ql:XPath ;
-    rml:source '""" + self.file_path + """' ;
+    rml:source """ + self.file_path + """ ;
     rdf:type rml:LogicalSource .
 
 map:source_001 rml:iterator "Project" ;
     rml:referenceFormulation ql:XPath ;
-    rml:source '""" + self.file_path + """' ;
+    rml:source """ + self.file_path + """ ;
     rdf:type rml:LogicalSource .
 
 map:source_002 rml:iterator "Project/Tasks/Task[*]" ;
     rml:referenceFormulation ql:XPath ;
-    rml:source '""" + self.file_path + """' ;
+    rml:source """ + self.file_path + """ ;
     rdf:type rml:LogicalSource .
 
 map:source_003 rml:iterator "Project/Assignments/Assignment[*]" ;
     rml:referenceFormulation ql:XPath ;
-    rml:source '""" + self.file_path + """' ;
+    rml:source """ + self.file_path + """ ;
     rdf:type rml:LogicalSource .
 
 map:source_004 rml:iterator "Project" ;
     rml:referenceFormulation ql:XPath ;
-    rml:source '""" + self.file_path + """' ;
+    rml:source """ + self.file_path + """ ;
     rdf:type rml:LogicalSource .
 
 map:source_005 rml:iterator "Project/Tasks/Task[*]" ;
     rml:referenceFormulation ql:XPath ;
-    rml:source '""" + self.file_path + """' ;
+    rml:source """ + self.file_path + """ ;
     rdf:type rml:LogicalSource .
 
 map:source_006 rml:iterator "Project/Resources/Resource[*]" ;
     rml:referenceFormulation ql:XPath ;
-    rml:source '""" + self.file_path + """' ;
+    rml:source """ + self.file_path + """ ;
     rdf:type rml:LogicalSource .
 
 map:source_007 rml:iterator "Project/Assignments/Assignment[*]" ;
     rml:referenceFormulation ql:XPath ;
-    rml:source '""" + self.file_path + """' ;
+    rml:source """ + self.file_path + """ ;
     rdf:type rml:LogicalSource .
 
 map:source_008 rml:iterator "Project" ;
     rml:referenceFormulation ql:XPath ;
-    rml:source '""" + self.file_path + """' ;
+    rml:source """ + self.file_path + """ ;
     rdf:type rml:LogicalSource .
 
 map:source_009 rml:iterator "Project" ;
     rml:referenceFormulation ql:XPath ;
-    rml:source '""" + self.file_path + """' ;
+    rml:source """ + self.file_path + """ ;
     rdf:type rml:LogicalSource .
 
 map:source_010 rml:iterator "Project" ;
     rml:referenceFormulation ql:XPath ;
-    rml:source '""" + self.file_path + """' ;
+    rml:source """ + self.file_path + """ ;
     rdf:type rml:LogicalSource .
 
 map:source_011 rml:iterator "Project/Tasks/Task[*]" ;
     rml:referenceFormulation ql:XPath ;
-    rml:source '""" + self.file_path + """' ;
+    rml:source """ + self.file_path + """ ;
     rdf:type rml:LogicalSource .
 
 map:source_012 rml:iterator "Project/Tasks/Task[*]" ;
     rml:referenceFormulation ql:XPath ;
-    rml:source '""" + self.file_path + """' ;
+    rml:source """ + self.file_path + """ ;
     rdf:type rml:LogicalSource .
 
 map:source_013 rml:iterator "Project/Tasks/Task[*]" ;
     rml:referenceFormulation ql:XPath ;
-    rml:source '""" + self.file_path + """' ;
+    rml:source """ + self.file_path + """ ;
     rdf:type rml:LogicalSource .
 
 map:source_014 rml:iterator "Project/Assignments/Assignment[*]" ;
     rml:referenceFormulation ql:XPath ;
-    rml:source '""" + self.file_path + """' ;
+    rml:source """ + self.file_path + """ ;
     rdf:type rml:LogicalSource .
 
 map:source_015 rml:iterator "Project/Assignments/Assignment[*]" ;
     rml:referenceFormulation ql:XPath ;
-    rml:source '""" + self.file_path + """' ;
+    rml:source """ + self.file_path + """ ;
     rdf:type rml:LogicalSource .
 
 map:source_016 rml:iterator "Project/Assignments/Assignment[*]" ;
     rml:referenceFormulation ql:XPath ;
-    rml:source '""" + self.file_path + """' ;
+    rml:source """ + self.file_path + """ ;
     rdf:type rml:LogicalSource .""")
         map_file.close()
