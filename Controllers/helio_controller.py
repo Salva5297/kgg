@@ -14,4 +14,4 @@ class Helio_controller:
 
         #print('java -jar helio.jar --mappings=Repositories/mappings'+ self.mappings_path + ' --config=config.json --write=Repositories/rdf_generated' + self.output_path + '/' + self.graph_namespace + '.ttl --close --clean')
 
-        os.system('java -jar helio.jar --mappings=Repositories/mappings'+ self.mappings_path + ' --config=config.json --write=Repositories/rdf_generated' + self.output_path + '/' + self.graph_namespace + '.ttl --close --clean')
+        os.system('java -jar helio.jar --mappings=Repositories/mappings'+ self.mappings_path + ' --config=config.json --write=' + self.output_path + '/' + self.graph_namespace + '.ttl --close --clean')

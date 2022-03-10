@@ -6,7 +6,7 @@ class Schedule_service:
     def __init__(self, tmp_name, graph_namespace):
         self.tmp_file_path = tmp_name
         self.mappings_path = '/schedule_mappings'
-        self.output_path = '/schedule_rdf'
+        self.output_path = 'Repositories/rdf_generated/schedule_rdf'
         self.graph_namespace = graph_namespace
 
 
