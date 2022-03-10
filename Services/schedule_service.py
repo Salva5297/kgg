@@ -1,7 +1,7 @@
 import os
 from Services.mappings_generator import Mappings_generator
 from Controllers.helio_controller import Helio_controller
-from Controllers.triplestore_controller import Triplestore_controller
+from Controllers.triplestore_controller import Triple_Store_Controller
 
 class Schedule_service:
     def __init__(self, tmp_name, graph_namespace):
@@ -24,5 +24,5 @@ class Schedule_service:
         helio_controller.execute_helio()
 
         # Send graph to triple store
-        triplestore_controller = Triplestore_controller(self.output_path, self.graph_namespace)
+        triplestore_controller = Triple_Store_Controller(self.output_path, self.graph_namespace)
         triplestore_controller.send_graph_to_triplestore()
