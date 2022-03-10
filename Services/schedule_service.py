@@ -8,6 +8,7 @@ class Schedule_service:
         self.mappings_path = '/schedule_mappings'
         self.output_path = 'Repositories/rdf_generated/schedule_rdf'
         self.graph_namespace = graph_namespace
+        self.graph_uri = ""
 
 
     def execute_conversion(self):
@@ -26,3 +27,4 @@ class Schedule_service:
         # Send graph to triple store
         triplestore_controller = Triple_Store_Controller(self.output_path, self.graph_namespace)
         triplestore_controller.send_graph()
+        self.graph_uri = triplestore_controller.graph_url + self.graph_namespace

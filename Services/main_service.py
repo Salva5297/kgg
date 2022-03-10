@@ -25,7 +25,7 @@ class Service:
             schedule_service = Schedule_service(tmp_service.tmp_name, self.graph_namespace)
             schedule_service.execute_conversion()
             
-            self.response_dict['graph_uri'] = "https://data.cogito.iot.linkeddata.es/" + self.graph_namespace
+            self.response_dict['graph_uri'] = schedule_service.graph_uri
             os.remove(tmp_service.tmp_name) # remove temporal file
         else:
             self.response_dict['Error'] = 'No filename'
