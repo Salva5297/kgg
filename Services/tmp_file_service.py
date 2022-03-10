@@ -3,7 +3,7 @@ import tempfile
 class Tmp_service:
     def __init__(self, file_data):
         self.file_data = file_data
-        self.tmp_file = tempfile.NamedTemporaryFile(mode='w+t')
+        self.tmp_file = tempfile.NamedTemporaryFile(mode='w+t', delete=False)
         self.tmp_name = ''
 
 
