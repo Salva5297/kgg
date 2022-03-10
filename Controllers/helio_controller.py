@@ -15,9 +15,9 @@ class Helio_controller:
         subprocess.call(['java',
                         '-jar',
                         'Controllers/helio.jar',
-                        '--mappings==../Repositories/mappings' + self.mappings_path,
-                        '--config=config.json',
-                        '--write=../Repositories/rdf_generated' + self.output_path + '/' + self.graph_namespace + '.ttl',
+                        '--mappings==Repositories/mappings' + self.mappings_path,
+                        '--config=Controllers/config.json',
+                        '--write=Repositories/rdf_generated' + self.output_path + '/' + self.graph_namespace + '.ttl',
                         '--close',
                         '--clean'
                         ])
