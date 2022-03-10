@@ -1,7 +1,4 @@
-from distutils.command.upload import upload
-import tempfile
 import os
-import subprocess
 from flask import request, make_response, jsonify
 
 from Services.tmp_file_service import Tmp_service
@@ -29,6 +26,6 @@ class Service:
             schedule_service.execute_conversion()
             
             self.response_dict['graph_uri'] = "https://data.cogito.iot.linkeddata.es/" + self.graph_namespace
-
+            os.remove(tmp_service.tmp_name) # remove temporal file
         else:
             self.response_dict['Error'] = 'No filename'
