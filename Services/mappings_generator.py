@@ -11,7 +11,7 @@ class Mappings_generator:
         Generate the mappings file
         """
         # Generate the mappings file
-        with open('../Repositories/mappings' + self.mappings_path + '/map.rml.ttl', 'w') as map_file:
+        with open('Repositories/mappings' + self.mappings_path + '/map.rml.ttl', 'w') as map_file:
             map_file.write("""
                             @prefix rr: <http://www.w3.org/ns/r2rml#> .
                             @prefix rml: <http://semweb.mmlab.be/ns/rml#> .
