@@ -1,7 +1,7 @@
 import os
 from mappings_generator import Mappings_generator
-from ..Controllers.helio_controller import Helio_controller
-from ..Controllers.triplestore_controller import Triplestore_controller
+from Controllers.helio_controller import Helio_controller
+from Controllers.triplestore_controller import Triplestore_controller
 
 class Schedule_service:
     def __init__(self, tmp_name, graph_namespace):

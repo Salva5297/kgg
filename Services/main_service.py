@@ -4,8 +4,8 @@ import os
 import subprocess
 from flask import request, make_response, jsonify
 
-from tmp_file_service import Tmp_service
-from schedule_service import Schedule_service
+from Services.tmp_file_service import Tmp_service
+from Services.schedule_service import Schedule_service
 
 class Service:
     def __init__(self, request_data):
