@@ -3,7 +3,7 @@ from flask import Flask, json, send_file, request, make_response, jsonify, after
 from Services.main_service import Service
 
 app = Flask(__name__)
-@app.route("/", methods=['POST'])
+@app.route("/schedule", methods=['POST'])
 def controller_post():
     """
     KGG Data Handler for POST requests
@@ -12,7 +12,7 @@ def controller_post():
     service.post() # return graph uri to query sparql endpoint
     return jsonify(service.response_dict)
 
-@app.route("/schedule", methods=['POST'])
+@app.route("/", methods=['POST'])
 def controller_post_return_ttl():
     """
     KGG Data Handler for POST requests that want as response a TTL file
