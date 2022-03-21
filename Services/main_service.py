@@ -10,6 +10,8 @@ class Service:
         self.type = None
         self.graph_namespace = ''
         self.response_dict = {}
+        self.project_name = request_data.form['project_name']
+        self.ttl_path = ''
 
     def post(self):
         """
@@ -22,10 +24,26 @@ class Service:
             tmp_service = Tmp_service(file_data)
             tmp_service.create_tmp_file() # create temporal file
             # Execute execute corresponding kgg, in this case we only have one kgg that is schedule
-            schedule_service = Schedule_service(tmp_service.tmp_name, self.graph_namespace)
+            schedule_service = Schedule_service(tmp_service.tmp_name, self.graph_namespace, self.project_name)
             schedule_service.execute_conversion()
             
             self.response_dict['graph_uri'] = schedule_service.graph_uri
             os.remove(tmp_service.tmp_name) # remove temporal file
         else:
             self.response_dict['Error'] = 'No filename'
+
+
+        
+    def post_return_file(self):
+        """
+        KGG Data Handler for POST requests that want as response a TTL file
+        """
+        if self.uploaded_file.filename != '':
+            self.graph_namespace = self.uploaded_file.filename.split('.')[0] # Get the filename without the extension to create the graph namespace
+            file_data = self.uploaded_file.read()
+            tmp_service = Tmp_service(file_data)
+            tmp_service.create_tmp_file()
+            schedule_service = Schedule_service(tmp_service.tmp_name, self.graph_namespace, self.project_name)
+            schedule_service.execute_conversion_return_ttl()
+            self.ttl_path = schedule_service.ttl_path
+            os.remove(tmp_service.tmp_name) # remove temporal file
