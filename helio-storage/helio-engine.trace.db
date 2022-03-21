@@ -1,4 +1,4 @@
-03-21 12:50:43 jdbc[2]: SQLException
+03-21 13:06:23 jdbc[2]: SQLException
 org.h2.jdbc.JdbcSQLException: Table LINKRULES not found; SQL statement:
 DELETE FROM  LINKRULES; [42S02-60]
 	at org.h2.message.Message.getSQLException(Message.java:84)

@@ -166,7 +166,7 @@ map:om_025 rml:reference "ActualWork" ;
 	rr:termType rr:Literal .
 
 map:om_026 rdf:type rr:ObjectMap ;
-	rr:template "https://data.cogito.iot.linkeddata.es/resources#Task_Cost_Project24__{ID}" ;
+	rr:template "https://data.cogito.iot.linkeddata.es/resources#Task_Cost_Project24_msproj11_{ID}" ;
 	rr:termType rr:Literal .
 
 map:om_027 rdf:type rr:ObjectMap ;
@@ -424,43 +424,43 @@ map:s_001 rdf:type rr:SubjectMap ;
 	rr:template "https://data.cogito.iot.linkeddata.es/resources#Cost_Project24_{Title}" .
 
 map:s_002 rdf:type rr:SubjectMap ;
-	rr:template "https://data.cogito.iot.linkeddata.es/resources#Task_Cost_Project24__{ID}" .
+	rr:template "https://data.cogito.iot.linkeddata.es/resources#Task_Cost_Project24_msproj11_{ID}" .
 
 map:s_003 rdf:type rr:SubjectMap ;
 	rr:template "https://data.cogito.iot.linkeddata.es/resources#unitOfCurrency/Project24_{Title}" .
 
 map:s_004 rdf:type rr:SubjectMap ;
-	rr:template "https://data.cogito.iot.linkeddata.es/resources#Task_Project24__{ID}" .
+	rr:template "https://data.cogito.iot.linkeddata.es/resources#Task_Project24_msproj11_{ID}" .
 
 map:s_005 rdf:type rr:SubjectMap ;
-	rr:template "https://data.cogito.iot.linkeddata.es/resources#Resource_Type_Project24__{ID}" .
+	rr:template "https://data.cogito.iot.linkeddata.es/resources#Resource_Type_Project24_msproj11_{ID}" .
 
 map:source_000 rml:iterator "Project" ;
 	rml:referenceFormulation ql:XPath ;
-	rml:source "/tmp/tmpuuijlcc3" ;
+	rml:source "/tmp/tmpq1hhnmu5" ;
 	rdf:type rml:LogicalSource .
 
 map:source_001 rml:iterator "Project" ;
 	rml:referenceFormulation ql:XPath ;
-	rml:source "/tmp/tmpuuijlcc3" ;
+	rml:source "/tmp/tmpq1hhnmu5" ;
 	rdf:type rml:LogicalSource .
 
 map:source_002 rml:iterator "Project/Tasks/Task[*]" ;
 	rml:referenceFormulation ql:XPath ;
-	rml:source "/tmp/tmpuuijlcc3" ;
+	rml:source "/tmp/tmpq1hhnmu5" ;
 	rdf:type rml:LogicalSource .
 
 map:source_003 rml:iterator "Project" ;
 	rml:referenceFormulation ql:XPath ;
-	rml:source "/tmp/tmpuuijlcc3" ;
+	rml:source "/tmp/tmpq1hhnmu5" ;
 	rdf:type rml:LogicalSource .
 
 map:source_004 rml:iterator "Project/Tasks/Task[*]" ;
 	rml:referenceFormulation ql:XPath ;
-	rml:source "/tmp/tmpuuijlcc3" ;
+	rml:source "/tmp/tmpq1hhnmu5" ;
 	rdf:type rml:LogicalSource .
 
 map:source_005 rml:iterator "Project/Resources/Resource[*]" ;
 	rml:referenceFormulation ql:XPath ;
-	rml:source "/tmp/tmpuuijlcc3" ;
+	rml:source "/tmp/tmpq1hhnmu5" ;
 	rdf:type rml:LogicalSource .

@@ -53,5 +53,4 @@ class Schedule_service:
     def get_process_name(self):
         xml_doc = ET.parse(self.tmp_file_path)
         root = xml_doc.getroot()
-        for element in root.findall("Project"):
-            self.process_name = element.find('Title').text
+        self.process_name = root.find("{http://schemas.microsoft.com/project}Title").text
